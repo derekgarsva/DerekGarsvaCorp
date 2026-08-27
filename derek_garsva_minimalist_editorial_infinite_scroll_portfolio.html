@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Derek Garsva — Software, Interfaces & Marketing</title>
+  <meta name="description" content="Derek Garsva. Software, interfaces y sistemas de adquisición con enfoque de ingeniería y resultados reales.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: [
+              '"Helvetica Neue"',
+              'Helvetica',
+              '-apple-system',
+              'Arial',
+              'sans-serif'
+            ],
+            mono: [
+              '"SF Mono"',
+              'SFMono-Regular',
+              'ui-monospace',
+              'Menlo',
+              'monospace'
+            ]
+          },
+          colors: {
+            apple: {
+              bg: '#000000',
+              text: '#f5f5f7',
+              subtext: '#86868b',
+              muted: '#424245',
+              accent: '#2997ff',
+              line: '#1d1d1f'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Tipografía Estricta Helvetica & Helvetica Neue */
+    * {
+      font-family: "Helvetica Neue", Helvetica, -apple-system, Arial, sans-serif;
+    }
+    
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+    
+    body {
+      background-color: #000000;
+      color: #f5f5f7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    /* Transiciones suaves */
+    a, button {
+      transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Scrollbar invisible */
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    /* ─── Transiciones sutiles entre sub-páginas ─── */
+    .view-panel {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .view-panel.is-leaving {
+      opacity: 0;
+      transform: translateY(-8px);
+      pointer-events: none;
+    }
+
+    .view-panel.is-entering {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  </style>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Derek Garsva",
+    "email": "derekgarsvaa@gmail.com",
+    "telephone": "+584243087887",
+    "url": "https://derekgarsvaa.vercel.app",
+    "jobTitle": "Software Developer & Business Infrastructure",
+    "sameAs": ["https://github.com/derekgarsva"]
+  }
+  </script>
+</head>
+<body class="bg-black text-[#f5f5f7] flex flex-col min-h-screen">
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- VISTA 00: PÁGINA PRINCIPAL (HOME) CON INFINITE LOOP SCROLL       -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <div id="view-home" class="view-panel block">
+    
+    <!-- Contenedor del ciclo 1 (Original) -->
+    <div class="home-loop-block" id="home-loop-original">
+      
+      <!-- Hero Principal -->
+      <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 sm:px-16 md:px-24 py-20">
+        <div class="max-w-3xl mx-auto space-y-10">
+          
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-[#f5f5f7] leading-[1.08]">
+            No vendo humo ni pretendo reinventar la rueda.
+          </h1>
+
+          <p class="text-lg sm:text-2xl text-[#86868b] font-normal leading-relaxed tracking-tight max-w-2xl mx-auto">
+            Construyo software, interfaces y herramientas digitales que resuelven problemas concretos. Si encaja con lo que necesitas, hablemos.
+          </p>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 text-sm font-medium">
+            <a 
+              href="#contacto"
+              class="text-[#2997ff] hover:underline flex items-center gap-1 group"
+            >
+              <span>Iniciar conversación</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+            <a 
+              href="#proyectos"
+              class="text-[#86868b] hover:text-[#f5f5f7] transition flex items-center gap-1"
+            >
+              <span>Ver proyectos seleccionados</span>
+              <span>↓</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Lista Editorial de Casos de Estudio -->
+      <section id="proyectos" class="py-32 px-6 sm:px-16 md:px-24 border-t border-neutral-900/80">
+        <div class="max-w-3xl mx-auto">
+          
+          <div class="mb-24 text-center sm:text-left">
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#f5f5f7]">
+              Trabajo Seleccionado
+            </h2>
+          </div>
+
+          <div class="space-y-28">
+
+            <!-- 01. Derek Studio -->
+            <article class="space-y-4 group">
+              <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#f5f5f7] group-hover:text-[#2997ff] transition">
+                <button onclick="navigate('derek-studio')" class="text-left">Derek Studio</button>
+              </h3>
+
+              <p class="text-base sm:text-lg text-[#86868b] font-normal leading-relaxed tracking-tight">
+                Estrategia e infraestructura de contenido con identidad sólida, producción audiovisual y campañas directas para empresas que buscan clientes y ventas reales, no métricas de vanidad.
+              </p>
+
+              <p class="text-sm text-[#f5f5f7] font-normal leading-normal">
+                <span class="text-[#86868b]">Resultado:</span> Caso activo en academia de natación con +30% de crecimiento de audiencia en dos semanas y 16 clientes nuevos captados en una sola campaña.
+              </p>
+
+              <div class="pt-3 flex items-center justify-between text-xs font-mono text-[#86868b]">
+                <span>Nikon D5100 · S23 Ultra · Adobe Lightroom · Meta Ads</span>
+                <button onclick="navigate('derek-studio')" class="text-sm font-sans font-medium text-[#2997ff] hover:underline flex items-center gap-1">
+                  <span>Ver caso completo</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 02. Agendod -->
+            <article class="space-y-4 group">
+              <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#f5f5f7] group-hover:text-[#2997ff] transition">
+                <button onclick="navigate('agendod')" class="text-left">Agendod</button>
+              </h3>
+
+              <p class="text-base sm:text-lg text-[#86868b] font-normal leading-relaxed tracking-tight">
+                Plataforma web de agendamiento y disponibilidad en tiempo real para negocios de servicios. El cliente reserva de forma autónoma y el administrador gestiona, aprueba y reprograma turnos con confirmaciones por correo.
+              </p>
+
+              <p class="text-sm text-[#f5f5f7] font-normal leading-normal">
+                <span class="text-[#86868b]">Resultado:</span> Eliminó el 100% de la gestión manual por WhatsApp y agenda en papel para el barbero Fabián, erradicando solapamientos de horario y horas muertas.
+              </p>
+
+              <div class="pt-3 flex items-center justify-between text-xs font-mono text-[#86868b]">
+                <span>TypeScript · Tailwind CSS · Supabase · Resend · Vercel</span>
+                <button onclick="navigate('agendod')" class="text-sm font-sans font-medium text-[#2997ff] hover:underline flex items-center gap-1">
+                  <span>Ver caso completo</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 03. Repurpose AI -->
+            <article class="space-y-4 group">
+              <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#f5f5f7] group-hover:text-[#2997ff] transition">
+                <button onclick="navigate('repurpose-ai')" class="text-left">Repurpose AI</button>
+              </h3>
+
+              <p class="text-base sm:text-lg text-[#86868b] font-normal leading-relaxed tracking-tight">
+                Motor de redistribución que procesa texto plano o URLs para generar 6 piezas editoriales independientes en paralelo (Hilos de X, LinkedIn, Newsletters, Guiones de video corto con marcas de tiempo, SEO y Puntos clave).
+              </p>
+
+              <p class="text-sm text-[#f5f5f7] font-normal leading-normal">
+                <span class="text-[#86868b]">Validación:</span> Probado extrayendo artículos completos en tiempo real. Soporta 5 idiomas, 5 tonos, persistencia de historial en base de datos y exportación en .txt.
+              </p>
+
+              <div class="pt-3 flex items-center justify-between text-xs font-mono text-[#86868b]">
+                <span>Next.js · TypeScript · LLM APIs · Scraper · Database</span>
+                <button onclick="navigate('repurpose-ai')" class="text-sm font-sans font-medium text-[#2997ff] hover:underline flex items-center gap-1">
+                  <span>Ver caso completo</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 04. Market Intelligence Terminal -->
+            <article class="space-y-4 group">
+              <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#f5f5f7] group-hover:text-[#2997ff] transition">
+                <button onclick="navigate('terminal-ia')" class="text-left">Market Intelligence Terminal</button>
+              </h3>
+
+              <p class="text-base sm:text-lg text-[#86868b] font-normal leading-relaxed tracking-tight">
+                Terminal autónoma inspirada en Bloomberg. Un enjambre de agentes de IA recolecta, filtra y razona tendencias económicas y de IA cada 15-30 minutos para entregar tasas de oportunidad y análisis competitivo a demanda.
+              </p>
+
+              <p class="text-sm text-[#f5f5f7] font-normal leading-normal">
+                <span class="text-[#86868b]">Ingeniería:</span> Extracción y síntesis profunda con pull requests automatizados de inteligencia de mercado en una interfaz móvil privada.
+              </p>
+
+              <div class="pt-3 flex items-center justify-between text-xs font-mono text-[#86868b]">
+                <span>Multi-Agent Pipelines · Deep Reasoning · Mobile APK</span>
+                <button onclick="navigate('terminal-ia')" class="text-sm font-sans font-medium text-[#2997ff] hover:underline flex items-center gap-1">
+                  <span>Ver caso completo</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Filosofía -->
+      <section id="filosofia" class="py-32 px-6 sm:px-16 md:px-24 border-t border-neutral-900/80">
+        <div class="max-w-3xl mx-auto space-y-16 text-center sm:text-left">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#f5f5f7]">
+              Menos es más. Pura utilidad.
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 text-left">
+            <div class="space-y-3">
+              <h3 class="text-base font-semibold text-white">Arquitectura SaaS</h3>
+              <p class="text-sm text-[#86868b] leading-relaxed">
+                Software veloz y escalable en Next.js, React y TypeScript. Interfaces con carga instantánea y datos robustos.
+              </p>
+            </div>
+            <div class="space-y-3">
+              <h3 class="text-base font-semibold text-white">Adquisición Real</h3>
+              <p class="text-sm text-[#86868b] leading-relaxed">
+                Estrategia y producción orientadas a generar flujo de caja y ventas, eliminando métricas de vanidad.
+              </p>
+            </div>
+            <div class="space-y-3">
+              <h3 class="text-base font-semibold text-white">Automatización</h3>
+              <p class="text-sm text-[#86868b] leading-relaxed">
+                Agentes y flujos que erradican la fricción manual en operaciones críticas del negocio.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section id="contacto" class="py-32 px-6 sm:px-16 md:px-24 border-t border-neutral-900/80 text-center">
+        <div class="max-w-2xl mx-auto space-y-8">
+          <h2 class="text-3xl sm:text-5xl font-semibold tracking-tight text-[#f5f5f7]">
+            ¿Tienes un problema concreto que resolver?
+          </h2>
+          <p class="text-base sm:text-lg text-[#86868b] leading-relaxed">
+            Si necesitas desarrollar una plataforma, automatizar un proceso o levantar una infraestructura de marketing que genere resultados, escríbeme.
+          </p>
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 text-sm font-medium">
+            <a href="mailto:derekgarsvaa@gmail.com" class="text-[#2997ff] hover:underline">
+              derekgarsvaa@gmail.com
+            </a>
+            <a href="https://wa.me/584243087887" target="_blank" rel="noopener noreferrer" class="text-[#f5f5f7] hover:text-[#2997ff] transition">
+              WhatsApp Directo ↗
+            </a>
+            <a href="https://github.com/derekgarsva" target="_blank" rel="noopener noreferrer" class="text-[#86868b] hover:text-[#f5f5f7] transition">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer inter-ciclo -->
+      <footer class="py-12 border-t border-neutral-900/60 px-6 sm:px-12 text-center text-xs font-mono text-[#86868b]">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>© 2026 Derek Garsva. Todos los derechos reservados.</p>
+          <p>derekgarsvaa.vercel.app</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Contenedor de clon para scroll infinito transparente -->
+    <div id="home-loop-clone"></div>
+
+  </div>
+
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- VISTA 01: SUB-PAGE DEREK STUDIO                                    -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <div id="view-derek-studio" class="view-panel hidden">
+    
+    <!-- Top Image Banner a Sangre -->
+    <div class="relative w-full h-80 sm:h-96 overflow-hidden">
+      <!--  -->
+      <img 
+        src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=2000&auto=format&fit=crop" 
+        alt="Derek Studio Hero" 
+        class="w-full h-full object-cover grayscale brightness-75 contrast-125"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+      <div class="absolute bottom-8 left-6 sm:left-16 md:left-24 max-w-3xl">
+        <button onclick="navigate('home', 'proyectos')" class="text-xs font-mono text-[#86868b] hover:text-white mb-4 block">
+          ← Volver al índice
+        </button>
+        <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight text-white">Derek Studio</h1>
+      </div>
+    </div>
+
+    <!-- Contenido Editorial Puro -->
+    <div class="max-w-3xl mx-auto px-6 sm:px-12 py-20 space-y-20">
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+          Marketing real vs. Contenido genérico de vanidad
+        </h2>
+        <p class="text-base sm:text-lg text-[#86868b] leading-relaxed">
+          Las empresas pierden tiempo y presupuesto publicando tendencias vacías en redes sociales que no generan clientes. Derek Studio opera como un departamento de marketing externo: define una narrativa de autoridad, produce contenido visual cinematográfico y despliega campañas de captación orientadas a generar flujo de caja.
+        </p>
+      </div>
+
+      <!-- Métrica Destacada en Texto Puro -->
+      <div class="space-y-3">
+        <p class="text-5xl sm:text-6xl font-semibold text-white tracking-tight">+16</p>
+        <p class="text-base text-[#86868b]">Clientes nuevos captados en una sola campaña para academia de natación (+30% de crecimiento de audiencia en dos semanas).</p>
+      </div>
+
+      <!-- Stack y Arsenal -->
+      <div class="space-y-6">
+        <h3 class="text-xl font-semibold text-white tracking-tight">Herramientas de Ejecución</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-mono text-[#86868b]">
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Cámara Principal</span><span>Nikon D5100</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Cámara Secundaria</span><span>Samsung S23 Ultra</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Color & Revelado</span><span>Adobe Lightroom</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Edición & Ritmo</span><span>CapCut Pro</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Tráfico & Pauta</span><span>Meta Ads Platform</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Software</span><span>Custom SaaS</span></div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-neutral-900">
+        <div>
+          <p class="text-sm font-semibold text-white">Sitio web en producción</p>
+          <p class="text-xs font-mono text-[#86868b]">derekstudio.vercel.app</p>
+        </div>
+        <div class="flex flex-wrap gap-6 text-sm font-medium">
+          <a href="https://derekstudio.vercel.app" target="_blank" rel="noopener noreferrer" class="text-[#2997ff] hover:underline">
+            Visitar sitio web ↗
+          </a>
+          <a href="https://instagram.com/derekstudio.xyz" target="_blank" rel="noopener noreferrer" class="text-[#f5f5f7] hover:text-[#2997ff] transition">
+            Instagram ↗
+          </a>
+          <button onclick="navigate('home', 'contacto')" class="text-[#86868b] hover:text-white transition">
+            Iniciar conversación
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- VISTA 02: SUB-PAGE AGENDOD                                         -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <div id="view-agendod" class="view-panel hidden">
+    
+    <div class="relative w-full h-80 sm:h-96 overflow-hidden">
+      <!-- [Image of Interfaz minimalista de agendamiento y reserva de servicios para barbería y negocios locales] -->
+      <img 
+        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2000&auto=format&fit=crop" 
+        alt="Agendod Hero" 
+        class="w-full h-full object-cover grayscale brightness-75 contrast-125"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+      <div class="absolute bottom-8 left-6 sm:left-16 md:left-24 max-w-3xl">
+        <button onclick="navigate('home', 'proyectos')" class="text-xs font-mono text-[#86868b] hover:text-white mb-4 block">
+          ← Volver al índice
+        </button>
+        <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight text-white">Agendod</h1>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-6 sm:px-12 py-20 space-y-20">
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+          Fin al cuello de botella manual por WhatsApp
+        </h2>
+        <p class="text-base sm:text-lg text-[#86868b] leading-relaxed">
+          Fabián (barbero) perdía tiempo valioso respondiendo mensajes dispersos, agendando citas en papel y sufriendo cruces de horario. Agendod creó un flujo transparente donde el cliente reserva de forma autónoma y el administrador gestiona turnos en tiempo real con notificaciones automáticas por correo.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <p class="text-5xl sm:text-6xl font-semibold text-white tracking-tight">100%</p>
+        <p class="text-base text-[#86868b]">De agendamientos gestionados de manera autónoma en el piloto activo, con 0 solapamientos de horario.</p>
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-xl font-semibold text-white tracking-tight">Arquitectura Técnica</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-mono text-[#86868b]">
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Lenguaje</span><span>TypeScript</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Frontend</span><span>Tailwind CSS</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Base de Datos</span><span>Supabase (PostgreSQL)</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Notificaciones</span><span>Resend API</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Infraestructura</span><span>Vercel Edge</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Autenticación</span><span>Google Cloud OAuth</span></div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-neutral-900">
+        <div>
+          <p class="text-sm font-semibold text-white">Plataforma en producción</p>
+          <p class="text-xs font-mono text-[#86868b]">barberfacr.vercel.app</p>
+        </div>
+        <div class="flex flex-wrap gap-6 text-sm font-medium">
+          <a href="https://barberfacr.vercel.app" target="_blank" rel="noopener noreferrer" class="text-[#2997ff] hover:underline">
+            Ver plataforma ↗
+          </a>
+          <a href="https://instagram.com/agendod.app" target="_blank" rel="noopener noreferrer" class="text-[#f5f5f7] hover:text-[#2997ff] transition">
+            Instagram ↗
+          </a>
+          <button onclick="navigate('home', 'contacto')" class="text-[#86868b] hover:text-white transition">
+            Iniciar conversación
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- VISTA 02: SUB-PAGE AGENDOD                                         -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <div id="view-agendod" class="view-panel hidden">
+    
+    <div class="relative w-full h-80 sm:h-96 overflow-hidden">
+      <!--  -->
+      <img 
+        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2000&auto=format&fit=crop" 
+        alt="Agendod Hero" 
+        class="w-full h-full object-cover grayscale brightness-75 contrast-125"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+      <div class="absolute bottom-8 left-6 sm:left-16 md:left-24 max-w-3xl">
+        <button onclick="navigate('home', 'proyectos')" class="text-xs font-mono text-[#86868b] hover:text-white mb-4 block">
+          ← Volver al índice
+        </button>
+        <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight text-white">Agendod</h1>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-6 sm:px-12 py-20 space-y-20">
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+          Fin al cuello de botella manual por WhatsApp
+        </h2>
+        <p class="text-base sm:text-lg text-[#86868b] leading-relaxed">
+          Fabián (barbero) perdía tiempo valioso respondiendo mensajes dispersos, agendando citas en papel y sufriendo cruces de horario. Agendod creó un flujo transparente donde el cliente reserva de forma autónoma y el administrador gestiona turnos en tiempo real con notificaciones automáticas por correo.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <p class="text-5xl sm:text-6xl font-semibold text-white tracking-tight">100%</p>
+        <p class="text-base text-[#86868b]">De agendamientos gestionados de manera autónoma en el piloto activo, con 0 solapamientos de horario.</p>
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-xl font-semibold text-white tracking-tight">Arquitectura Técnica</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-mono text-[#86868b]">
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Lenguaje</span><span>TypeScript</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Frontend</span><span>Tailwind CSS</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Base de Datos</span><span>Supabase (PostgreSQL)</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Notificaciones</span><span>Resend API</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Infraestructura</span><span>Vercel Edge</span></div>
+          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Autenticación</span><span>Google Cloud OAuth</span></div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-neutral-900">
+        <div>
+          <p class="text-sm font-semibold text-white">Plataforma en producción</p>
+          <p class="text-xs font-mono text-[#86868b]">barberfacr.vercel.app</p>
+        </div>
+        <div class="flex gap-6 text-sm font-medium">
+          <a href="https://barberfacr.vercel.app" target="_blank" rel="noopener noreferrer" class="text-[#2997ff] hover:underline">
+            Ver plataforma ↗
+          </a>
+          <button onclick="navigate('home', 'contacto')" class="text-[#86868b] hover:text-white transition">
+            Iniciar conversación
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- VISTA 03: SUB-PAGE REPURPOSE AI                                    -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <div id="view-repurpose-ai" class="view-panel hidden">
+    
+    <div class="relative w-full h-80 sm:h-96 overflow-hidden">
+      <!--  -->
+      <img 
+        src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop" 
+        alt="Repurpose AI Hero" 
+        class="w-full h-full object-cover grayscale brightness-75 contrast-125"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+      <div class="absolute bottom-8 left-6 sm:left-16 md:left-24 max-w-3xl">
+        <button onclick="navigate('home', 'proyectos')" class="text-xs font-mono text-[#86868b] hover:text-white mb-4 block">
+          ← Volver al índice
+        </button>
+        <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight text-white">Repurpose AI</h1>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-6 sm:px-12 py-20 space-y-20">
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+          De una URL o texto a 6 piezas editoriales únicas
+        </h2>
+        <p class="text-base sm:text-lg text-[#86868b] leading-relaxed">
+          A diferencia de herramientas genéricas de IA que entregan variaciones flojas del mismo texto, Repurpose AI inyecta briefs editoriales especializados para cada formato en paralelo. Probado extrayendo artículos completos en tiempo real (ej. Wikipedia sobre RAG) y sintetizando contenido listo para publicar.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <p class="text-5xl sm:text-6xl font-semibold text-white tracking-tight">6x</p>
+        <p class="text-base text-[#86868b]">Formatos generados en paralelo con briefs dedicados (5 idiomas, 5 tonos, exportación en .txt e historial en base de datos).</p>
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-xl font-semibold text-white tracking-tight">Formatos Soportados</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-mono text-[#86868b]">
+          <div class="pb-2 border-b border-neutral-900"><span class="text-white block">01. Hilo de X (Twitter)</span>5-7 tuits numerados con gancho.</div>
+          <div class="pb-2 border-b border-neutral-900"><span class="text-white block">02. Post de LinkedIn</span>Estructura persuasiva y llamada a la acción.</div>
+          <div class="pb-2 border-b border-neutral-900"><span class="text-white block">03. Newsletter</span>Línea de asunto y cuerpo de contenido.</div>
+          <div class="pb-2 border-b border-neutral-900"><span class="text-white block">04. Guion de Video Corto</span>Con marcas de tiempo (timestamps).</div>
+          <div class="pb-2 border-b border-neutral-900"><span class="text-white block">05. Paquete SEO</span>5 titulares H1 + Meta description + Keywords.</div>
+          <div class="pb-2 border-b border-neutral-900"><span class="text-white block">06. Ideas Clave</span>Puntos accionables extraídos al instante.</div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-neutral-900">
+        <div>
+          <p class="text-sm font-semibold text-white">Demo funcional en vivo</p>
+          <p class="text-xs font-mono text-[#86868b]">repurpo-qppooeo-preview-4200.runable.site</p>
+        </div>
+        <div class="flex gap-6 text-sm font-medium">
+          <a href="https://repurpo-qppooeo-preview-4200.runable.site/" target="_blank" rel="noopener noreferrer" class="text-[#2997ff] hover:underline">
+            Probar demo live ↗
+          </a>
+          <button onclick="navigate('home', 'contacto')" class="text-[#86868b] hover:text-white transition">
+            Iniciar conversación
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <!-- VISTA 04: SUB-PAGE TERMINAL DE INTELIGENCIA                        -->
+  <!-- ═════════════════════════════════════════════════════════════════ -->
+  <div id="view-terminal-ia" class="view-panel hidden">
+    
+    <div class="relative w-full h-80 sm:h-96 overflow-hidden">
+      <!--  -->
+      <img 
+        src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2000&auto=format&fit=crop" 
+        alt="Market Terminal Hero" 
+        class="w-full h-full object-cover grayscale brightness-75 contrast-125"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+      <div class="absolute bottom-8 left-6 sm:left-16 md:left-24 max-w-3xl">
+        <button onclick="navigate('home', 'proyectos')" class="text-xs font-mono text-[#86868b] hover:text-white mb-4 block">
+          ← Volver al índice
+        </button>
+        <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight text-white">Market Intelligence Terminal</h1>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-6 sm:px-12 py-20 space-y-20">
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+          La terminal Bloomberg para creadores e inversores de IA
+        </h2>
+        <p class="text-base sm:text-lg text-[#86868b] leading-relaxed">
+          En un entorno saturado de ruido en redes sociales y medios tradicionales, esta terminal despliega un enjambre de agentes autónomos que recolectan, filtran y razonan tendencias cada 15 a 30 minutos. Identifica dolores no resueltos en el mercado, analiza competidores y calcula tasas de oportunidad accionables.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <p class="text-5xl sm:text-6xl font-semibold text-white tracking-tight">15-30m</p>
+        <p class="text-base text-[#86868b]">Frecuencia de extracción, razonamiento autónomo y pull requests de inteligencia de mercado.</p>
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-xl font-semibold text-white tracking-tight">Módulos de Análisis</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-mono text-[#86868b]">
+          <div class="pb-2 border-b border-neutral-900"><span class="text-white block">01. Detección de Fricción</span>Scraping continuo de dolores de mercado.</div>
+          <div class="pb-2 border-b border-neutral-900"><span class="text-white block">02. Radar Competitivo</span>Seguimiento de features, pricing y lanzamientos.</div>
+          <div class="pb-2 border-b border-neutral-900"><span class="text-white block">03. Pull Requests de Inteligencia</span>Consultas a demanda con modelos de razonamiento.</div>
+          <div class="pb-2 border-b border-neutral-900"><span class="text-white block">04. Cliente Móvil Privado</span>Testing interno en APK compilada.</div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-neutral-900">
+        <div>
+          <p class="text-sm font-semibold text-white">Estado del desarrollo</p>
+          <p class="text-xs font-mono text-[#86868b]">Beta privada / Testing interno</p>
+        </div>
+        <div class="flex gap-6 text-sm font-medium">
+          <button onclick="navigate('home', 'contacto')" class="text-[#2997ff] hover:underline">
+            Solicitar acceso / Consultoría ↗
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ─── MOTOR DE SCROLL SUAVE LENIS & ENRUTADOR CON TRANSICIONES SUTILES ─── -->
+  <script>
+    // Inicializar Smooth Scroll suave
+    const lenis = new Lenis({
+      duration: 1.3,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.4,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Sistema de Infinite Scroll Seamless para la vista Home
+    let isCurrentViewHome = true;
+    let singleBlockHeight = 0;
+    let isNavigating = false;
+
+    function initInfiniteScroll() {
+      const originalBlock = document.getElementById('home-loop-original');
+      const cloneContainer = document.getElementById('home-loop-clone');
+      
+      if (originalBlock && cloneContainer) {
+        cloneContainer.innerHTML = originalBlock.innerHTML;
+        singleBlockHeight = originalBlock.offsetHeight;
+      }
+    }
+
+    lenis.on('scroll', (e) => {
+      if (!isCurrentViewHome || singleBlockHeight === 0 || isNavigating) return;
+      
+      const currentScroll = e.animatedScroll;
+      
+      if (currentScroll >= singleBlockHeight) {
+        lenis.scrollTo(currentScroll - singleBlockHeight, { immediate: true });
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      const originalBlock = document.getElementById('home-loop-original');
+      if (originalBlock) {
+        singleBlockHeight = originalBlock.offsetHeight;
+      }
+    });
+
+    // Enrutador de vistas con micro-transición suave (Fade + TranslateY)
+    function navigate(viewName, targetId = null) {
+      if (isNavigating) return;
+      isNavigating = true;
+
+      const currentPanel = document.querySelector('.view-panel:not(.hidden)');
+      const nextPanel = document.getElementById(`view-${viewName}`);
+
+      if (!nextPanel) {
+        isNavigating = false;
+        return;
+      }
+
+      // Si ya está en la misma página y solo es scroll a un elemento
+      if (currentPanel === nextPanel && targetId) {
+        const element = document.getElementById(targetId);
+        if (element) {
+          lenis.scrollTo(element, { duration: 1.2, offset: 0 });
+        }
+        isNavigating = false;
+        return;
+      }
+
+      // 1. Transición de Salida
+      if (currentPanel) {
+        currentPanel.classList.add('is-leaving');
+      }
+
+      setTimeout(() => {
+        // Ocultar todas las vistas
+        document.querySelectorAll('.view-panel').forEach(panel => {
+          panel.classList.add('hidden');
+          panel.classList.remove('block', 'is-leaving', 'is-entering');
+        });
+
+        // 2. Preparar Entrada
+        nextPanel.classList.remove('hidden');
+        nextPanel.classList.add('block', 'is-entering');
+        
+        isCurrentViewHome = (viewName === 'home');
+        lenis.scrollTo(0, { immediate: true });
+
+        // Forzar reflow del navegador para disparar animación
+        void nextPanel.offsetHeight;
+
+        // 3. Ejecutar Entrada
+        requestAnimationFrame(() => {
+          nextPanel.classList.remove('is-entering');
+        });
+
+        if (targetId) {
+          setTimeout(() => {
+            const element = document.getElementById(targetId);
+            if (element) {
+              lenis.scrollTo(element, { duration: 1.2, offset: 0 });
+            }
+          }, 350);
+        }
+
+        window.location.hash = viewName === 'home' ? '' : viewName;
+        
+        setTimeout(() => {
+          isNavigating = false;
+        }, 400);
+      }, 200);
+    }
+
+    // Manejar enlaces con hash
+    document.addEventListener('click', (e) => {
+      const target = e.target.closest('a[href^="#"]');
+      if (target) {
+        const targetId = target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          lenis.scrollTo(targetElement, { duration: 1.4, offset: 0 });
+        }
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initInfiniteScroll();
+
+      const hash = window.location.hash.replace('#', '');
+      if (['derek-studio', 'agendod', 'repurpose-ai', 'terminal-ia'].includes(hash)) {
+        navigate(hash);
+      } else {
+        navigate('home');
+      }
+    });
+  </script>
+
+</body>
+</html>
