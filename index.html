@@ -4,9 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Derek Garsva — Software, Interfaces & Marketing</title>
+  
+  <!-- Verificación & SEO Canónico -->
   <meta name="google-site-verification" content="RIC-Y5W8C5OgKW6I_oAtXcF7vZqJ6DpzqU4chSnwKrE" />
   <meta name="description" content="Derek Garsva. Software, interfaces y sistemas de adquisición con enfoque de ingeniería y resultados reales.">
+  <link rel="canonical" href="https://derekgarsvacorp.vercel.app/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Redes Sociales & Compartidos -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://derekgarsvacorp.vercel.app/" />
+  <meta property="og:title" content="Derek Garsva — Software, Interfaces & Marketing" />
+  <meta property="og:description" content="Software, interfaces y sistemas de adquisición con enfoque de ingeniería y resultados reales." />
+  <meta property="og:image" content="https://derekgarsvacorp.vercel.app/favicon.png" />
   
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Derek Garsva — Software, Interfaces & Marketing" />
+  <meta name="twitter:description" content="Software, interfaces y sistemas de adquisición con enfoque de ingeniería y resultados reales." />
+  <meta name="twitter:image" content="https://derekgarsvacorp.vercel.app/favicon.png" />
+
+  <!-- Favicon & Manifest -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lenis Smooth Scroll -->
@@ -96,7 +117,7 @@
       background: transparent;
     }
 
-    /* ─── Transiciones sutiles entre sub-páginas ─── */
+    /* Transiciones sutiles entre sub-páginas */
     .view-panel {
       opacity: 1;
       transform: translateY(0);
@@ -124,7 +145,7 @@
     "name": "Derek Garsva",
     "email": "derekgarsvaa@gmail.com",
     "telephone": "+584243087887",
-    "url": "https://derekgarsvaa.vercel.app",
+    "url": "https://derekgarsvacorp.vercel.app",
     "jobTitle": "Software Developer & Business Infrastructure",
     "sameAs": ["https://github.com/derekgarsva"]
   }
@@ -142,8 +163,10 @@
       
       <!-- Hero Principal -->
       <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 sm:px-16 md:px-24 py-20">
-        <div class="max-w-3xl mx-auto space-y-10">
+        <div class="max-w-3xl mx-auto space-y-8">
           
+          <p class="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#2997ff]">Derek Garsva</p>
+
           <h1 class="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-[#f5f5f7] leading-[1.08]">
             No vendo humo ni pretendo reinventar la rueda.
           </h1>
@@ -340,7 +363,7 @@
       <footer class="py-12 border-t border-neutral-900/60 px-6 sm:px-12 text-center text-xs font-mono text-[#86868b]">
         <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© 2026 Derek Garsva. Todos los derechos reservados.</p>
-          <p>derekgarsvaa.vercel.app</p>
+          <p>derekgarsvacorp.vercel.app</p>
         </div>
       </footer>
 
@@ -353,13 +376,12 @@
 
 
   <!-- ═════════════════════════════════════════════════════════════════ -->
-  <!-- VISTA 01: SUB-PAGE DEREK STUDIO                                    -->
+  <!-- VISTA 01: SUB-PAGE DEREK STUDIO                                   -->
   <!-- ═════════════════════════════════════════════════════════════════ -->
   <div id="view-derek-studio" class="view-panel hidden">
     
     <!-- Top Image Banner a Sangre -->
     <div class="relative w-full h-80 sm:h-96 overflow-hidden">
-      <!--  -->
       <img 
         src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=2000&auto=format&fit=crop" 
         alt="Derek Studio Hero" 
@@ -430,12 +452,11 @@
 
 
   <!-- ═════════════════════════════════════════════════════════════════ -->
-  <!-- VISTA 02: SUB-PAGE AGENDOD                                         -->
+  <!-- VISTA 02: SUB-PAGE AGENDOD                                        -->
   <!-- ═════════════════════════════════════════════════════════════════ -->
   <div id="view-agendod" class="view-panel hidden">
     
     <div class="relative w-full h-80 sm:h-96 overflow-hidden">
-      <!-- [Image of Interfaz minimalista de agendamiento y reserva de servicios para barbería y negocios locales] -->
       <img 
         src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2000&auto=format&fit=crop" 
         alt="Agendod Hero" 
@@ -502,81 +523,11 @@
 
 
   <!-- ═════════════════════════════════════════════════════════════════ -->
-  <!-- VISTA 02: SUB-PAGE AGENDOD                                         -->
-  <!-- ═════════════════════════════════════════════════════════════════ -->
-  <div id="view-agendod" class="view-panel hidden">
-    
-    <div class="relative w-full h-80 sm:h-96 overflow-hidden">
-      <!--  -->
-      <img 
-        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2000&auto=format&fit=crop" 
-        alt="Agendod Hero" 
-        class="w-full h-full object-cover grayscale brightness-75 contrast-125"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-      <div class="absolute bottom-8 left-6 sm:left-16 md:left-24 max-w-3xl">
-        <button onclick="navigate('home', 'proyectos')" class="text-xs font-mono text-[#86868b] hover:text-white mb-4 block">
-          ← Volver al índice
-        </button>
-        <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight text-white">Agendod</h1>
-      </div>
-    </div>
-
-    <div class="max-w-3xl mx-auto px-6 sm:px-12 py-20 space-y-20">
-      
-      <div class="space-y-4">
-        <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
-          Fin al cuello de botella manual por WhatsApp
-        </h2>
-        <p class="text-base sm:text-lg text-[#86868b] leading-relaxed">
-          Fabián (barbero) perdía tiempo valioso respondiendo mensajes dispersos, agendando citas en papel y sufriendo cruces de horario. Agendod creó un flujo transparente donde el cliente reserva de forma autónoma y el administrador gestiona turnos en tiempo real con notificaciones automáticas por correo.
-        </p>
-      </div>
-
-      <div class="space-y-3">
-        <p class="text-5xl sm:text-6xl font-semibold text-white tracking-tight">100%</p>
-        <p class="text-base text-[#86868b]">De agendamientos gestionados de manera autónoma en el piloto activo, con 0 solapamientos de horario.</p>
-      </div>
-
-      <div class="space-y-6">
-        <h3 class="text-xl font-semibold text-white tracking-tight">Arquitectura Técnica</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-mono text-[#86868b]">
-          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Lenguaje</span><span>TypeScript</span></div>
-          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Frontend</span><span>Tailwind CSS</span></div>
-          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Base de Datos</span><span>Supabase (PostgreSQL)</span></div>
-          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Notificaciones</span><span>Resend API</span></div>
-          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Infraestructura</span><span>Vercel Edge</span></div>
-          <div class="flex justify-between pb-2 border-b border-neutral-900"><span class="text-white">Autenticación</span><span>Google Cloud OAuth</span></div>
-        </div>
-      </div>
-
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-neutral-900">
-        <div>
-          <p class="text-sm font-semibold text-white">Plataforma en producción</p>
-          <p class="text-xs font-mono text-[#86868b]">barberfacr.vercel.app</p>
-        </div>
-        <div class="flex gap-6 text-sm font-medium">
-          <a href="https://barberfacr.vercel.app" target="_blank" rel="noopener noreferrer" class="text-[#2997ff] hover:underline">
-            Ver plataforma ↗
-          </a>
-          <button onclick="navigate('home', 'contacto')" class="text-[#86868b] hover:text-white transition">
-            Iniciar conversación
-          </button>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- ═════════════════════════════════════════════════════════════════ -->
-  <!-- VISTA 03: SUB-PAGE REPURPOSE AI                                    -->
+  <!-- VISTA 03: SUB-PAGE REPURPOSE AI                                   -->
   <!-- ═════════════════════════════════════════════════════════════════ -->
   <div id="view-repurpose-ai" class="view-panel hidden">
     
     <div class="relative w-full h-80 sm:h-96 overflow-hidden">
-      <!--  -->
       <img 
         src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop" 
         alt="Repurpose AI Hero" 
@@ -645,7 +596,6 @@
   <div id="view-terminal-ia" class="view-panel hidden">
     
     <div class="relative w-full h-80 sm:h-96 overflow-hidden">
-      <!--  -->
       <img 
         src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2000&auto=format&fit=crop" 
         alt="Market Terminal Hero" 
