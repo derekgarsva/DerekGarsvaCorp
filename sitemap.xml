@@ -1,15 +1,9 @@
-{
-    "name": "Derek Garšva",
-    "short_name": "Garšva",
-    "icons": [
-        {
-            "src": "/favicon-32x32.png",
-            "sizes": "32x32",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#000000",
-    "background_color": "#050505",
-    "display": "standalone",
-    "start_url": "/"
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://derekgarsvacorp.vercel.app/</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
