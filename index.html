@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="https://derekgarsvacorp.vercel.app/favicon.png" />
 
   <!-- Favicon & Manifest -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -594,7 +594,7 @@
 
 
   <!-- ═════════════════════════════════════════════════════════════════ -->
-  <!-- VISTA 04: SUB-PAGE TERMINAL DE INTELIGENCIA                        -->
+  <!-- VISTA 04: SUB-PAGE TERMINAL DE INTELIGENCIA                       -->
   <!-- ═════════════════════════════════════════════════════════════════ -->
   <div id="view-terminal-ia" class="view-panel hidden">
     
@@ -639,4 +639,36 @@
         </div>
       </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between">
+      </div>
+    </div>
+  </div>
+
+  <!-- Script de Navegación Esencial -->
+  <script>
+    function navigate(viewName, targetHash) {
+      const panels = document.querySelectorAll('.view-panel');
+      panels.forEach(panel => {
+        panel.classList.add('hidden');
+        panel.classList.remove('block');
+      });
+
+      const activePanel = document.getElementById('view-' + viewName);
+      if (activePanel) {
+        activePanel.classList.remove('hidden');
+        activePanel.classList.add('block');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+
+      if (targetHash) {
+        setTimeout(() => {
+          const el = document.getElementById(targetHash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 50);
+      }
+    }
+  </script>
+</body>
+</html>
